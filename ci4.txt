@@ -1,0 +1,33 @@
+em public colocara uma pasta chamada assets onde terá a pasta com arquivos css, js e img
+
+tudo que vem depois da url é uri: www.site.com.br [url] /contato -> [uri]
+
+Routeamento com parametros na url
+
+$routes->get('/contact/edit/(:any)/(:any)', 'Contact::edit/$1/$2');
+
+no controlador de Contact tem um metodo edit que recebe dois parametros
+
+Rotas nomeadas:
+$routes->get('/', 'Home::index', ['as' => 'home']);
+
+return redirect()->route('home');
+
+form action="<?php echo url_to('Home::index') ?>"
+
+form action="<?= url_to('Home::index') ?>"
+
+com rota nomeada:
+form action="<?= url_to('home_index') ?>"
+
+Para criar agrupamento de rotas em desenvolvimento:
+em app >> config criar pasta development e arquivo Routes.php.
+
+No arquivo Config/Routes.php configurar:
+if(is_file(APPPATH . 'Config/ ' . ENVIRONMENT . '/Routes.php')) {
+    require APPPATH . 'Config/ ' . ENVIRONMENT . '/Routes.php';
+}
+
+$routes->group('admin', static
+
+
